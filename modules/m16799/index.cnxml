@@ -1,0 +1,116 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Beyond the Basics</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>16bbd9a8-d764-4678-b070-3f1f23651e66</md:uuid>
+</metadata>
+
+  <content>
+   <section id="formore"><title>For more...</title>
+   <para id="morethantwo">
+    Many problems in statistical signal processing and communications can be solved using basic detection theory.
+    For example, determining whether an airplane is located at a specific range and direction with radar and whether a received bit is a <m:math><m:cn>0</m:cn></m:math> or a
+    <m:math><m:cn>1</m:cn></m:math> are both solved with
+    <link document="m16253" target-id="mf">matched filter detectors</link>.
+    However, many elaborations of deciding which of two models best describes a given dataset abound.
+    For instance, suppose we have more than two models for the data.
+    Previous modules hint at how to expand beyond two models
+    (see <link document="m16251" target-id="maximum"/> and
+    <link document="m16253" target-id="gaussian"/>).
+    However, no extensions for Neyman-Pearson detectors for more than two models exists.
+    </para>
+
+    <para id="more">
+    To learn more about the basics of detection theory and beyond, see the books by <cite target-id="vantrees"><cite-title>Van Trees</cite-title></cite>, <cite target-id="kay"><cite-title>Kay</cite-title></cite>
+    and <cite target-id="mcdonoughwhalen"><cite-title>McDonough and Whalen</cite-title></cite>,
+    and several modules on Connexions (search for 'likelihood ratio', 'detection theory' and 'matched filter').
+    The Wikipedia article on
+    <link url="http://en.wikipedia.org/wiki/Statistical_hypothesis_testing">Statistical Hypothesis Testing</link> describes what is called detection theory here more abstractly from a statistician's viewpoint.
+    </para>
+    </section>
+  
+   
+    <section id="beyond"><title>Beyond Simple Problems</title>
+    <para id="imprecise">
+    More interesting (and challenging) are situations where the data models are imprecise to some degree.
+    The simplest case is when some model parameter is not known.
+    For example, suppose the exact time of the radar return is not known (i.e., the airplane's range is uncertain).
+    Here, the unknown parameter is the signal's time-of-origin.
+    We must somehow determine that parameter <emphasis>and</emphasis> determine if the signal is actually present.
+    </para>
+    
+    <para id="glrt">
+    As you might expect, the likelihood ratio remains the focus of attention, now in the guise of what is known as the
+    <term>generalized likelihood ratio test</term> (GLRT)
+    (see this Connexions <link document="m11238">module</link>).<footnote id="idm5457536">
+    The Wikipedia article on the <link url="http://en.wikipedia.org/wiki/Likelihood_ratio">Likelihood-ratio test</link> is concerned with the Generalized Likelihood Ratio Test.
+    </footnote>
+    This technique and others opens the door to what are known as <term>simultaneous estimation and detection algorithms</term>.
+    </para>
+    
+    <para id="nonpara">
+    Some unknowns may not be parametric and prevent a precise description of a model by a probability function.
+    What do we do when the amplitude distribution function of the additive noise is not well characterized?
+    So-called <term>robust detection</term> represents one attempt to address these problems. See <cite target-id="poor"/> for more. 
+    </para>
+    
+    <para id="sequential">
+    Beyond variations of model uncertainties are new approaches to solving detection problems.
+    For example, a subtlety in the basic formulation is that all the data are available.
+    Can we do just as well by attempting to make a decision prematurely as the data arrive?
+    Note that always taking a <emphasis>fixed</emphasis> fewer number of samples always leads to worse performance.
+    Instead, we acquire only the amount of data needed to make a decision.
+    This approach is known as <term>sequential detection</term> or the <term>sequential probability ratio test</term> (SPRT).
+    See modules in Connexions and the classic book by
+    <cite target-id="wald"><cite-title>Wald</cite-title></cite>.
+    </para>
+  </section>
+  </content>
+
+<bib:file>
+  <bib:entry id="kay">
+    <bib:book>
+      <bib:author>S.M. Kay</bib:author>
+      <bib:title>Fundamentals of Statistical Signal Processing, Volume 2: Detection Theory</bib:title>
+      <bib:publisher>Prentice Hall</bib:publisher>
+      <bib:year>1998</bib:year>
+    </bib:book>
+  </bib:entry>
+
+  <bib:entry id="mcdonoughwhalen">
+    <bib:book>
+      <bib:author>R.N. McDonough and A.D. Whalen</bib:author>
+      <bib:title>Detection of Signals in Noise</bib:title>
+      <bib:publisher>Academic Press</bib:publisher>
+      <bib:year>1995</bib:year>
+    </bib:book>
+  </bib:entry>
+
+  <bib:entry id="poor">
+    <bib:book>
+      <bib:author>H.V. Poor</bib:author>
+      <bib:title>An Introduction to Signal Detection and Estimation</bib:title>
+      <bib:publisher>Springer</bib:publisher>
+      <bib:year>1988</bib:year>
+    </bib:book>
+  </bib:entry>
+
+  <bib:entry id="vantrees">
+    <bib:book>
+      <bib:author>H.L. Van Trees</bib:author>
+      <bib:title>Detection, Estimation, and Modulation Theory, Part I</bib:title>
+      <bib:publisher>Wiley-Interscience</bib:publisher>
+      <bib:year>2001</bib:year>
+    </bib:book>
+  </bib:entry>
+
+  <bib:entry id="wald">
+    <bib:book>
+      <bib:author>A. Wald</bib:author>
+      <bib:title>Sequential Analysis</bib:title>
+      <bib:publisher>Dover</bib:publisher>
+      <bib:year>2004</bib:year>
+    </bib:book>
+  </bib:entry>
+
+</bib:file>
+  
+</document>
